@@ -1,0 +1,1104 @@
+/* =====================================================================
+   CREAM + CRIMSON + LAVENDER DESIGN SYSTEM
+   Warm Parchment Canvas, Crimson Red Primary, Lavender Accents
+   Tokens, Typography (SF Pro), Crisp Hairlines, Pill Radii
+   ===================================================================== */
+
+:root {
+  /* Aliases used by some page markup (were undefined in the original build) */
+  --text-main: var(--ink);
+  --text-muted: var(--ink-secondary);
+  --danger: var(--status-high-text);
+  --success: var(--status-low-text);
+
+  /* ─── Light Mode Tokens ─── */
+  --primary: #b83535;                   /* Crimson Red */
+  --primary-focus: #c43d3d;
+  --primary-hover: #ca4040;
+  --primary-active: #9e2d2d;
+  --on-primary: #ffffff;
+
+  --lavender: #8b7ab8;                  /* Soft Lavender */
+  --lavender-bg: rgba(139, 122, 184, 0.14);
+  --lavender-text: #6b5a9e;
+  --lavender-border: rgba(139, 122, 184, 0.3);
+
+  --canvas: #fdf8f1;                    /* Warm Cream Canvas */
+  --canvas-parchment: #f5ede1;          /* Parchment */
+  --surface-pearl: #faf4ea;             /* Pearl Cream */
+  --surface: #fdfaf5;                   /* Card / Panel Background */
+  --surface-subtle: #fdfcf8;
+  --surface-hover: #f2e9dd;             /* Warm Hover */
+
+  --ink: #2a1f1f;                       /* Warm Near-Black */
+  --ink-secondary: #5a4848;             /* Warm Muted Brown */
+  --ink-muted-80: #3d2f2f;
+  --ink-muted-48: #8a7070;
+  --ink-muted: #9a8080;
+
+  --hairline: #e8ddd0;                  /* Warm Hairline */
+  --divider-soft: #f0e8de;
+  --border: #d8ccc0;
+  --border-focus: #b83535;
+
+  /* Status Tokens */
+  --status-low: #34c759;
+  --status-low-bg: rgba(52, 199, 89, 0.12);
+  --status-low-text: #248a3d;
+
+  --status-medium: #e08020;
+  --status-medium-bg: rgba(224, 128, 32, 0.12);
+  --status-medium-text: #9e5a00;
+
+  --status-high: #cc3030;
+  --status-high-bg: rgba(204, 48, 48, 0.12);
+  --status-high-text: #a82020;
+
+  --status-critical: #8b7ab8;           /* Lavender for critical */
+  --status-critical-bg: rgba(139, 122, 184, 0.14);
+  --status-critical-text: #6b5a9e;
+
+  /* Typography Stacks */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Shapes & Radii */
+  --radius-none: 0px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* Elevation & Shadows */
+  --elevation-none: none;
+  --elevation-hairline: 0 0 0 1px var(--hairline);
+  --elevation-card: 0 2px 8px rgba(80, 40, 20, 0.06);
+  --elevation-hover: 0 4px 16px rgba(80, 40, 20, 0.10);
+  --elevation-product-drop: 0 8px 30px rgba(80, 40, 20, 0.14);
+
+  /* Frosted Glass */
+  --glass-bg: rgba(253, 248, 241, 0.85);
+  --glass-border: rgba(80, 40, 20, 0.08);
+  --glass-blur: blur(20px);
+}
+
+/* ─── Dark Mode Tokens (Warm Dark / Deep Espresso) ─── */
+[data-theme="dark"] {
+  --primary: #e06060;                   /* Warm Red on Dark */
+  --primary-focus: #d45050;
+  --primary-hover: #e87070;
+  --primary-active: #c04040;
+  --on-primary: #ffffff;
+
+  --lavender: #c0a8e8;                  /* Bright Lavender on Dark */
+  --lavender-bg: rgba(192, 168, 232, 0.20);
+  --lavender-text: #d4baff;
+  --lavender-border: rgba(192, 168, 232, 0.35);
+
+  --canvas: #1a1210;                    /* Deep Espresso */
+  --canvas-parchment: #221918;          /* Dark Parchment */
+  --surface-pearl: #2d2220;
+  --surface: #261e1c;                   /* Elevated Dark Card */
+  --surface-subtle: #2a2120;
+  --surface-hover: #352826;
+
+  --ink: #f5ede8;                       /* Warm Off-White */
+  --ink-secondary: #b09898;
+  --ink-muted-80: #d4c0c0;
+  --ink-muted-48: #8a7878;
+  --ink-muted: #8a7878;
+
+  --hairline: rgba(255, 230, 220, 0.12);
+  --divider-soft: #2a2120;
+  --border: #4a3835;
+  --border-focus: #e06060;
+
+  /* Status Tokens (Dark Tints) */
+  --status-low: #30d158;
+  --status-low-bg: rgba(48, 209, 88, 0.18);
+  --status-low-text: #48d86e;
+
+  --status-medium: #ffb340;
+  --status-medium-bg: rgba(255, 179, 64, 0.18);
+  --status-medium-text: #ffc060;
+
+  --status-high: #ff6060;
+  --status-high-bg: rgba(255, 96, 96, 0.20);
+  --status-high-text: #ff8080;
+
+  --status-critical: #c0a8e8;           /* Lavender on dark */
+  --status-critical-bg: rgba(192, 168, 232, 0.22);
+  --status-critical-text: #d4baff;
+
+  /* Elevation */
+  --elevation-card: 0 2px 10px rgba(0, 0, 0, 0.4);
+  --elevation-hover: 0 4px 20px rgba(0, 0, 0, 0.55);
+  --elevation-product-drop: 0 8px 30px rgba(0, 0, 0, 0.65);
+
+  /* Frosted Glass */
+  --glass-bg: rgba(26, 18, 16, 0.85);
+  --glass-border: rgba(255, 230, 220, 0.12);
+}
+
+/* =====================================================================
+   GLOBAL RESET & BASE STYLING
+   ===================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-family);
+  font-size: 17px;
+  line-height: 1.47;
+  letter-spacing: -0.015em;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
+/* =====================================================================
+   APP LAYOUT CONTAINER
+   ===================================================================== */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--canvas);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px 24px;
+}
+
+/* =====================================================================
+   TYPOGRAPHY HIERARCHY (SF PRO SPECIFICATION)
+   ===================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.hero-display {
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.028em;
+  margin-bottom: 12px;
+}
+
+.display-lg {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.page-title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.page-subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.015em;
+  color: var(--ink-secondary);
+  margin-top: 4px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+/* Backward compatibility aliases */
+.section-eyebrow-olive,
+.section-eyebrow-salmon {
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0;
+  margin-bottom: 6px;
+}
+
+/* =====================================================================
+   APPLE FROSTED NAVIGATION BAR
+   ===================================================================== */
+
+.navbar-container {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--hairline);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.nav-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 52px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.015em;
+  transition: opacity 0.15s ease;
+}
+
+.nav-brand:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.nav-brand-tag {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--lavender-text);
+  background-color: var(--lavender-bg);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+[data-theme="dark"] .nav-brand-tag {
+  color: var(--lavender-text);
+  background-color: var(--lavender-bg);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-secondary);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+  background-color: var(--surface-hover);
+  text-decoration: none;
+}
+
+.nav-link.active {
+  color: var(--primary);
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Apple Theme Toggle Capsule */
+.apple-theme-toggle {
+  display: flex;
+  align-items: center;
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  padding: 3px 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.apple-theme-toggle:hover {
+  border-color: var(--border-focus);
+}
+
+.apple-theme-toggle:active {
+  transform: scale(0.96);
+}
+
+/* Role capsule */
+.role-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.role-tag.student {
+  background-color: rgba(52, 199, 89, 0.14);
+  color: var(--status-low-text);
+}
+
+.role-tag.student {
+  background-color: var(--lavender-bg);
+  color: var(--lavender-text);
+}
+
+.role-tag.faculty,
+.role-tag.admin {
+  background-color: rgba(184, 53, 53, 0.12);
+  color: var(--primary);
+}
+
+/* =====================================================================
+   BUTTONS (APPLE CAPSULE / PILL SPECIFICATION)
+   ===================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Action Blue Primary Button */
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-focus);
+  border-color: var(--primary-focus);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Clean Secondary Ghost / Outlined Button */
+.btn-secondary {
+  background-color: transparent;
+  color: var(--ink);
+  border-color: var(--hairline);
+}
+
+.btn-secondary:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--border);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* Compact Pill Sizes */
+.btn-sm {
+  font-size: 12px;
+  padding: 6px 14px;
+}
+
+.btn-lg {
+  font-size: 17px;
+  padding: 12px 24px;
+}
+
+/* =====================================================================
+   APPLE UTILITY CARDS & FEATURE TILES (18PX RADIUS)
+   ===================================================================== */
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--elevation-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Keynote Banner / Hero Tile */
+.keynote-card {
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.keynote-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.keynote-card p {
+  font-size: 15px;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  max-width: 760px;
+}
+
+/* Backward compatibility alias for cta-block-red */
+.cta-block-red {
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--elevation-card);
+}
+
+.cta-block-red h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.cta-block-red p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+}
+
+/* Backward compatibility aliases for ribbon-cards */
+.ribbon-card {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-card);
+  overflow: hidden;
+  margin-bottom: 24px;
+  transition: border-color 0.2s ease;
+}
+
+.ribbon-card-title {
+  padding: 16px 20px;
+  background-color: var(--surface-pearl);
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.ribbon-card-body {
+  padding: 20px;
+  background-color: var(--surface);
+}
+
+.ribbon-card-body-sage,
+.ribbon-card-body-salmon,
+.ribbon-card-body-peach,
+.ribbon-card-body-lime,
+.ribbon-card-body-sky,
+.ribbon-card-body-steel,
+.ribbon-card-body-periwinkle,
+.ribbon-card-body-olive {
+  background-color: var(--surface);
+}
+
+/* =====================================================================
+   APPLE STATISTIC CARDS (18PX RADIUS)
+   ===================================================================== */
+
+.stat-card {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--elevation-card);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .stat-card:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--canvas-parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--ink-secondary);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 26px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+/* =====================================================================
+   APPLE STATUS BADGES & CAPSULES
+   ===================================================================== */
+
+.risk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+}
+
+.risk-badge.LOW {
+  background-color: var(--status-low-bg);
+  color: var(--status-low-text);
+  border-color: rgba(52, 199, 89, 0.25);
+}
+
+.risk-badge.MEDIUM {
+  background-color: var(--status-medium-bg);
+  color: var(--status-medium-text);
+  border-color: rgba(255, 149, 0, 0.25);
+}
+
+.risk-badge.HIGH {
+  background-color: var(--status-high-bg);
+  color: var(--status-high-text);
+  border-color: rgba(255, 59, 48, 0.25);
+}
+
+.risk-badge.CRITICAL {
+  background-color: var(--status-critical-bg);
+  color: var(--status-critical-text);
+  border-color: rgba(175, 82, 222, 0.3);
+}
+
+.severity-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.severity-pill.LOW {
+  background-color: var(--status-low-bg);
+  color: var(--status-low-text);
+}
+
+.severity-pill.MEDIUM {
+  background-color: var(--status-medium-bg);
+  color: var(--status-medium-text);
+}
+
+.severity-pill.HIGH,
+.severity-pill.CRITICAL {
+  background-color: var(--status-high-bg);
+  color: var(--status-high-text);
+}
+
+/* =====================================================================
+   COLLISION ITEM CARD
+   ===================================================================== */
+
+.collision-item {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.collision-item:hover {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .collision-item:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.collision-item.resolved {
+  opacity: 0.65;
+  background-color: var(--canvas-parchment);
+}
+
+/* =====================================================================
+   APPLE MODERN DATA TABLES
+   ===================================================================== */
+
+.table-wrapper {
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--elevation-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+thead {
+  background-color: var(--surface-pearl);
+  border-bottom: 1px solid var(--hairline);
+}
+
+th {
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-secondary);
+}
+
+td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink);
+  vertical-align: middle;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: var(--surface-hover);
+}
+
+/* =====================================================================
+   APPLE FORM CONTROLS & INPUTS (8PX RADIUS)
+   ===================================================================== */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--ink);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(184, 53, 53, 0.18);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="dark"] .form-select:focus,
+[data-theme="dark"] .form-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(224, 96, 96, 0.28);
+}
+
+/* =====================================================================
+   AUTHENTICATION CARD & WRAPPER
+   ===================================================================== */
+
+.auth-wrapper {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--elevation-product-drop);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.auth-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.auth-header p {
+  font-size: 14px;
+  color: var(--ink-secondary);
+}
+
+/* Demo account quick login chip */
+.demo-account-chip {
+  width: 100%;
+  text-align: left;
+  background-color: var(--canvas-parchment);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 6px;
+}
+
+.demo-account-chip:hover {
+  background-color: var(--surface-hover);
+  border-color: var(--primary);
+}
+
+/* =====================================================================
+   PROGRESS BARS
+   ===================================================================== */
+
+.progress-bar-container {
+  width: 100%;
+  height: 6px;
+  background-color: var(--hairline);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: var(--radius-pill);
+  transition: width 0.3s ease;
+}
+
+.progress-bar-fill.completed {
+  background-color: var(--status-low);
+}
+
+/* =====================================================================
+   ALERTS, EMPTY STATES & SPINNERS
+   ===================================================================== */
+
+.error-banner {
+  background-color: var(--status-high-bg);
+  border: 1px solid rgba(255, 59, 48, 0.25);
+  color: var(--status-high-text);
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--ink-secondary);
+  font-size: 15px;
+}
+
+.empty-state-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: var(--ink-secondary);
+  font-size: 14px;
+  gap: 14px;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid var(--hairline);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: appleSpin 0.8s linear infinite;
+}
+
+@keyframes appleSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* =====================================================================
+   APPLE DIRECTORY FOOTER
+   ===================================================================== */
+
+.footer-container {
+  background-color: var(--canvas-parchment);
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 40px 24px 32px 24px;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+  line-height: 2.41; /* Apple dense-link spec */
+}
+
+.footer-col a {
+  color: var(--ink-secondary);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.footer-col a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--hairline);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--ink-muted);
+}
+
+.footer-links-inline {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links-inline a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.footer-links-inline a:hover {
+  text-decoration: underline;
+  color: var(--ink);
+}
+
+/* =====================================================================
+   GRID UTILITIES & RESPONSIVENESS
+   ===================================================================== */
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid-cols-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-cols-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .grid-cols-2,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-links {
+    display: none; /* Mobile menu can collapse or simplify */
+  }
+  .hero-display {
+    font-size: 38px;
+  }
+}

@@ -1,0 +1,18 @@
+# Optional: local PostgreSQL for development
+#   docker compose up -d
+# Matches the DATABASE_URL in .env.example
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: workload-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: student_workload
+    ports:
+      - "5432:5432"
+    volumes:
+      - workload_pgdata:/var/lib/postgresql/data
+
+volumes:
+  workload_pgdata:

@@ -1,0 +1,25 @@
+{
+  "name": "workload-analyzer-next",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Student Workload & Deadline Collision Analyzer: Next.js + PostgreSQL",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:setup": "node scripts/db-setup.mjs",
+    "test": "node --test --test-concurrency=1 tests/api.test.mjs"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.41.0",
+    "bcryptjs": "^3.0.2",
+    "ioredis": "^6.0.0",
+    "jose": "^6.0.11",
+    "next": "16.4.6",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "recharts": "^3.2.0",
+    "zod": "^4.1.0"
+  }
+}
